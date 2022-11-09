@@ -3,23 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Alura.TestDrive.MainPage">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        
-        <Label Grid.Row="0" Grid.Column="0" Text="Azera"/>
-        <Label Grid.Row="0" Grid.Column="1" Text="60000"/>
-        <Label Grid.Row="1" Grid.Column="0" Text="HB02"/>
-        <Label Grid.Row="1" Grid.Column="1" Text="55000"/>
-        <Label Grid.Row="2" Grid.Column="0" Text="Fiesta Turbo"/>
-        <Label Grid.Row="2" Grid.Column="1" Text="40000"/>
-    </Grid>
+    <ListView x:Name="listaViewVeiculos" ItemsSource="{Binding Veiculos}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Label Text="{Binding Nome}"/>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>
